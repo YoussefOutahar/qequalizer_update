@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "579762234994",
+    "project_id": "qequalizer-84df1",
+    "storage_bucket": "qequalizer-84df1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579762234994:android:df835791b10977b2c844eb",
+        "android_client_info": {
+          "package_name": "com.example.qequalizer_update"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579762234994-ljtugupght2d0uj3rou37t1taa4oal3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTat0o4b8jgzqYs1kZS0gtbiketqL9zNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579762234994-ljtugupght2d0uj3rou37t1taa4oal3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579762234994:android:654b3db1eb8aa1eec844eb",
+        "android_client_info": {
+          "package_name": "com.outahar.qequalizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579762234994-ljtugupght2d0uj3rou37t1taa4oal3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTat0o4b8jgzqYs1kZS0gtbiketqL9zNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579762234994-ljtugupght2d0uj3rou37t1taa4oal3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8029832693124619~9711044656"
+    }
+  ],
+  "configuration_version": "1"
+}
