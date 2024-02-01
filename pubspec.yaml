@@ -54,6 +54,7 @@ dependencies:
   # Third-Parties/Ads:
   firebase_core: ^2.24.2
   google_mobile_ads: ^4.0.0
+  shimmer: ^3.0.0
   # cloud_firestore: ^4.14.0
   # onesignal_flutter: 
 

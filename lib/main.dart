@@ -3,11 +3,13 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:prefs/prefs.dart';
 import 'package:provider/provider.dart';
+import 'package:qequalizer_update/Features/Ads/google_ads.dart';
 import 'package:qequalizer_update/firebase_options.dart';
 import 'package:move_to_background/move_to_background.dart';
+import 'Features/Ads/AppOpen/app_open_manager.dart';
+import 'Features/Ads/AppOpen/app_lifecycle_reactor.dart';
 import 'Features/backround_manager.dart';
 import 'Providers/themes.dart';
 import 'Pages/eq_page.dart';
@@ -21,7 +23,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  MobileAds.instance.initialize();
+  GoogleAdsService().init();
 
   Prefs.init();
 
@@ -42,8 +44,38 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  late AppLifecycleReactor appLifecycleReactor;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    appLifecycleReactor.listenToAppStateChanges();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+
+    appLifecycleReactor = AppLifecycleReactor(
+      appOpenAdManager: AppOpenAdManager()..loadAd(),
+    );
+    appLifecycleReactor.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Themes theme = Provider.of<Themes>(context);

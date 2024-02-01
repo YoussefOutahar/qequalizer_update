@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
 import 'package:provider/provider.dart';
 import 'package:qequalizer_update/Features/backround_manager.dart';
+import 'package:qequalizer_update/Features/Ads/google_ads.dart';
 import '../Features/Equalizer/equalizer_builder.dart';
 import '../Features/VolumeControl/volume_slider.dart';
 import '../Providers/screen_config.dart';
@@ -67,29 +68,11 @@ class EQState extends State<EQ> {
         }),
       ),
       body: Stack(
+        alignment: Alignment.center,
         children: [
           IgnorePointer(
             ignoring: !enable,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  EqualizerBuilder(bandLvlRange: _bandLvlRange!, enable: enable),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      // BASS(
-                      //   enable: enable,
-                      //   boost: boost,
-                      // ),
-                      VolumeV(
-                        enable: enable,
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            child: EqualizerBuilder(bandLvlRange: _bandLvlRange!, enable: enable),
           ),
           // Positioned(
           //   child: AdBanner(),
