@@ -1,4 +1,4 @@
-package com.example.qequalizer_update
+package com.outahar.qequalizer
 
 import io.flutter.embedding.android.FlutterActivity
 

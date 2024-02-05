@@ -71,6 +71,7 @@ class SliderBandsState extends State<SliderBands> {
                   ),
                 ),
                 disabled: !widget.enabled,
+                tooltip: FlutterSliderTooltip(disabled: true),
                 axis: Axis.vertical,
                 rtl: true,
                 min: widget.min,

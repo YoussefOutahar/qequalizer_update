@@ -27,6 +27,8 @@ void main() async {
 
   Prefs.init();
 
+  // Init notification
+
   Provider.debugCheckInvalidValueType = null;
   BackroundManager.initBackround();
 
