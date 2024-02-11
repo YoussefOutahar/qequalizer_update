@@ -53,7 +53,9 @@ class CustomEQState extends State<CustomEQ> {
                         ))
                     .toList(),
               ),
+              SizedBox(height: SizeConfig.screenHeight! * 0.01),
               const Divider(),
+              SizedBox(height: SizeConfig.screenHeight! * 0.01),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: FutureBuilder<List<String>>(

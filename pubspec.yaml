@@ -33,8 +33,8 @@ dependencies:
 
   # Features:
   equalizer_flutter: ^0.0.1
-  move_to_background: ^1.0.2
-  flutter_background: ^1.2.0
+  # move_to_background: ^1.0.2
+  # flutter_background: ^1.2.0
   flutter_background_service: ^5.0.5
   flutter_local_notifications: ^16.3.2
   flutter_material_color_picker: ^1.0.5
@@ -52,6 +52,7 @@ dependencies:
   prefs: ^4.1.0+3
   provider: ^6.1.1
   url_launcher: ^6.0.7
+  flutter_dotenv: ^5.1.0
 
   # Third-Parties/Ads:
   firebase_core: ^2.24.2
@@ -76,6 +77,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - .env
 
   fonts:
     - family: NovaRound

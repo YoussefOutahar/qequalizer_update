@@ -1,17 +1,19 @@
+import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'banner_ad.dart';
-import 'native_ad.dart';
+import 'Widgets/banner_ad.dart';
+import 'Widgets/native_ad.dart';
 
 class GoogleAdsService {
   void init() {
     MobileAds.instance.initialize();
   }
 
-  final bannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
-  final interstitialAdUnitId = 'ca-app-pub-3940256099942544/1033173712';
-  final nativeAdUnitId = 'ca-app-pub-3940256099942544/2247696110';
-  final appOpenUnitId = 'ca-app-pub-3940256099942544/9257395921';
+  final bannerAdUnitId = dotenv.env['GOOGLE_BANNER_AD_UNIT_ID']!;
+  final interstitialAdUnitId = dotenv.env['GOOGLE_INTERSTITIAL_AD_UNIT_ID']!;
+  final nativeAdUnitId = dotenv.env['GOOGLE_NATIVE_AD_UNIT_ID']!;
+  final appOpenUnitId = dotenv.env['GOOGLE_APP_OPEN_AD_UNIT_ID']!;
 
   InterstitialAd? _interstitialAd;
 
@@ -40,4 +42,6 @@ class GoogleAdsService {
           },
         ));
   }
+
+  Widget getBannerAdWidget() => BannerAdWidget(adUnitId: bannerAdUnitId);
 }

@@ -2,10 +2,12 @@ import 'dart:async';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:equalizer_flutter/equalizer_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_background/flutter_background.dart';
+// import 'package:flutter_background/flutter_background.dart';
 import 'package:provider/provider.dart';
+import 'package:qequalizer_update/Features/Ads/Widgets/banner_ad.dart';
 import 'package:qequalizer_update/Features/backround_manager.dart';
 import 'package:qequalizer_update/Features/Ads/google_ads.dart';
+import 'package:qequalizer_update/Features/local_notifications.dart';
 import '../Features/Equalizer/equalizer_builder.dart';
 import '../Features/VolumeControl/volume_slider.dart';
 import '../Providers/screen_config.dart';
@@ -51,7 +53,7 @@ class EQState extends State<EQ> {
           setState(() {
             enable = (enable == true) ? false : true;
             EqualizerFlutter.setEnabled(enable);
-            BackroundManager.backroundLogic(enable);
+            // BackroundManager.backroundLogic(enable);
             // boost.setEnabled(enabled: enable);
           });
         },
@@ -74,12 +76,12 @@ class EQState extends State<EQ> {
             ignoring: !enable,
             child: EqualizerBuilder(bandLvlRange: _bandLvlRange!, enable: enable),
           ),
-          // Positioned(
-          //   child: AdBanner(),
-          //   bottom: 0,
-          //   left: 0,
-          //   right: 0,
-          // ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: GoogleAdsService().getBannerAdWidget(),
+          ),
         ],
       ),
     );
